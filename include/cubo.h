@@ -27,6 +27,6 @@ class Cubo : public Espacial {
 
 		friend istream& operator>> (std::istream &i, Cubo &c);
 		friend ostream& operator<< (ostream &o, Cubo const _cubo);
-}
+};
 
 #endif

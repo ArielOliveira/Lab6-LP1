@@ -11,7 +11,7 @@ CC = g++
 RM = rm -rf
 
 OBJS_P = ./build/main.o ./build/triangulo.o ./build/retangulo.o ./build/quadrado.o ./build/circulo.o
-OBJS_E = ./build/piramide.o
+OBJS_E = ./build/piramide.o ./build/cubo.o ./build/paralelepipedo.o ./build/esfera.o
 
 
 CPPFLAGS = -Wall -pedantic -ansi -std=c++11
@@ -44,6 +44,15 @@ $(OBJ_DIR)/circulo.o: $(SRC_DIR)/circulo.cpp $(INC_DIR)/circulo.h $(INC_DIR)/pla
 ###################################################################################################################
 
 $(OBJ_DIR)/piramide.o: $(SRC_DIR)/piramide.cpp $(INC_DIR)/piramide.h $(INC_DIR)/espacial.h $(INC_DIR)/figura.h
+	$(CC) -c $(CPPFLAGS) $< -o $@
+
+$(OBJ_DIR)/cubo.o: $(SRC_DIR)/cubo.cpp $(INC_DIR)/cubo.h $(INC_DIR)/espacial.h $(INC_DIR)/figura.h
+	$(CC) -c $(CPPFLAGS) $< -o $@
+
+$(OBJ_DIR)/paralelepipedo.o: $(SRC_DIR)/paralelepipedo.cpp $(INC_DIR)/paralelepipedo.h $(INC_DIR)/espacial.h $(INC_DIR)/figura.h
+	$(CC) -c $(CPPFLAGS) $< -o $@
+
+$(OBJ_DIR)/esfera.o: $(SRC_DIR)/esfera.cpp $(INC_DIR)/esfera.h $(INC_DIR)/espacial.h $(INC_DIR)/figura.h
 	$(CC) -c $(CPPFLAGS) $< -o $@
 
 debug: CPPFLAGS += -g -O0

@@ -13,7 +13,7 @@ void Cubo::setAresta(float aresta) {this->aresta = aresta;}
 float Cubo::getAresta() {return aresta;}
 
 istream& operator>> (std::istream &i, Cubo &c) {
-	i >> aresta;
+	i >> c.aresta;
 	return i;
 }
 
