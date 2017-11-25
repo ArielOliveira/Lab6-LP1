@@ -35,6 +35,26 @@ arielLib.a: $(CPPFILES)
 	$(CC) $(CPPFLAGS) -c $(SRC_DIR)/triangulo.cpp -o $(OBJ_DIR)/triangulo.o
 	$(AR) rcs $(LIB_DIR)/$@  $(OBJS)
 
+arielLib.so: $(CPPFILES)
+	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/circulo.cpp -o $(OBJ_DIR)/circulo.o
+	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/cubo.cpp -o $(OBJ_DIR)/cubo.o
+	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/esfera.cpp -o $(OBJ_DIR)/esfera.o
+	$(CC) $(CPPFLAGS) -fPIC -c $(INC_DIR)/espacial.h -o $(OBJ_DIR)/espacial.o
+	$(CC) $(CPPFLAGS) -fPIC -c $(INC_DIR)/figura.h -o $(OBJ_DIR)/figura.o
+	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/paralelepipedo.cpp -o $(OBJ_DIR)/paralelepipedo.o
+	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/piramide.cpp -o $(OBJ_DIR)/piramide.o
+	$(CC) $(CPPFLAGS) -fPIC -c $(INC_DIR)/plana.h -o $(OBJ_DIR)/plana.o
+	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/quadrado.cpp -o $(OBJ_DIR)/quadrado.o
+	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/retangulo.cpp -o $(OBJ_DIR)/retangulo.o
+	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/triangulo.cpp -o $(OBJ_DIR)/triangulo.o
+	$(CC) -shared -fPIC -o $(LIB_DIR)/$@  $(OBJS)
+
+prog_estatico:
+	$(CC) $(CPPFLAGS) $(SRC_DIR)/main.cpp $(LIB_DIR)/arielLib.a -o $(OBJ_DIR)/$@
+
+prog_dinamico:
+	$(CC) $(CPPFLAGS) $(SRC_DIR)/main.cpp $(LIB_DIR)/arielLib.so -o $(OBJ_DIR)/$@
+
 
 debug: CPPFLAGS += -g -O0
 debug: arielLib

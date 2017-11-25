@@ -3,10 +3,9 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+#include "figuras.h"
 
-#include "triangulo.h"
-#include "circulo.h"
-#include "piramide.h"
+using namespace arielLib;
 
 int main() {
 	Triangulo *t = new Triangulo();
