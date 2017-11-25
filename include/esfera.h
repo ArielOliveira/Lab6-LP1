@@ -7,28 +7,30 @@ using std::istream;
 #include <ostream>
 using std::ostream;
 
-#define PI 3.14
-
 #include "espacial.h"
 
-class Esfera : public Espacial {
-	private:
-		float raio;
-	public:
-		Esfera(float raio);
+#define PI 3.14
 
-		Esfera();
-		~Esfera();
+namespace arielLib {
+	class Esfera : public Espacial {
+		private:
+			float raio;
+		public:
+			Esfera(float raio);
 
-		void calcArea();
-		void calcVolume();
+			Esfera();
+			~Esfera();
 
-		void setRaio(float raio);
+			void calcArea();
+			void calcVolume();
 
-		float getRaio();
+			void setRaio(float raio);
 
-		friend istream& operator>> (std::istream &i, Esfera &f);
-		friend ostream& operator<< (ostream &o, Esfera const _esfera);
-};
+			float getRaio();
+
+			friend istream& operator>> (std::istream &i, Esfera &f);
+			friend ostream& operator<< (ostream &o, Esfera const _esfera);
+	};
+}
 
 #endif

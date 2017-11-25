@@ -3,15 +3,17 @@
 
 #include "figura.h"
 
-class Espacial : public Figura {
-	protected:
-		float volume;
-	public:
-		Espacial() {volume = 0;}
-		~Espacial() {}
+namespace arielLib {
+	class Espacial : public Figura {
+		protected:
+			float volume;
+		public:
+			Espacial() {volume = 0;}
+			~Espacial() {}
 		
-		virtual void calcVolume() {volume = 0;}
-		float getVolume() {return volume;}
-};
+			virtual void calcVolume() {volume = 0;}
+			float getVolume() {return volume;}
+	};
+}
 
 #endif

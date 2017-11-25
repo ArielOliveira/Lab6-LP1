@@ -3,15 +3,18 @@
 
 #include "figura.h"
 
-class Plana : public Figura {
-	protected:
-		float perimetro;
-	public:
-		Plana() {perimetro = 0;}
-		~Plana() {}
+namespace arielLib {
+	class Plana : public Figura {
+		protected:
+			float perimetro;
+		public:
+			Plana() {perimetro = 0;}
+			~Plana() {}
 
-		virtual void calcPerimetro() {perimetro = 0;}
-		float getPerimetro() {return perimetro;}
-};
+			virtual void calcPerimetro() {perimetro = 0;}
+			float getPerimetro() {return perimetro;}
+	};
+
+}
 
 #endif

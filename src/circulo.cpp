@@ -1,23 +1,26 @@
 #include "circulo.h"
 
-Circulo::Circulo(float raio) {this->raio = raio;}
+namespace arielLib {
 
-Circulo::Circulo() {}
-Circulo::~Circulo() {}
+	Circulo::Circulo(float raio) {this->raio = raio;}
 
-void Circulo::calcArea() {area = PI * (raio * raio);}
-void Circulo::calcPerimetro() {perimetro = 2 * PI * raio;}
+	Circulo::Circulo() {}
+	Circulo::~Circulo() {}
 
-void Circulo::setRaio(float raio) {this->raio = raio;}
+	void Circulo::calcArea() {area = PI * (raio * raio);}
+	void Circulo::calcPerimetro() {perimetro = 2 * PI * raio;}
 
-float Circulo::getRaio() {return raio;}
+	void Circulo::setRaio(float raio) {this->raio = raio;}
 
-istream& operator>> (std::istream &i, Circulo &c) {
-	i >> c.raio;
-	return i;
-}
+	float Circulo::getRaio() {return raio;}
 
-ostream& operator<< (ostream &o, Circulo const _circulo) {
-	o << "Area: " << _circulo.area << std::endl << "Perimetro: " << _circulo.perimetro << std::endl;
-	return o;
+	istream& operator>> (std::istream &i, Circulo &c) {
+		i >> c.raio;
+		return i;
+	}
+
+	ostream& operator<< (ostream &o, Circulo const _circulo) {
+		o << "Area: " << _circulo.area << std::endl << "Perimetro: " << _circulo.perimetro << std::endl;
+		return o;
+	}
 }

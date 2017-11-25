@@ -9,24 +9,27 @@ using std::ostream;
 
 #include "plana.h"
 
-class Quadrado : public Plana {
-	private:
-		float lado;
-	public:
-		Quadrado(float lado);
+namespace arielLib {
+	class Quadrado : public Plana {
+		private:
+			float lado;
+		public:
+			Quadrado(float lado);
 
-		Quadrado();
-		~Quadrado();
+			Quadrado();
+			~Quadrado();
 
-		void calcArea();
-		void calcPerimetro();
+			void calcArea();
+			void calcPerimetro();
 
-		void setLado(float lado);
+			void setLado(float lado);
 
-		float getLado();
+			float getLado();
 
-		friend istream& operator>> (std::istream &i, Quadrado &r);
-		friend ostream& operator<< (ostream &o, Quadrado const _quadrado);
-};
+			friend istream& operator>> (std::istream &i, Quadrado &r);
+			friend ostream& operator<< (ostream &o, Quadrado const _quadrado);
+	};
+
+}
 
 #endif

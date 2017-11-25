@@ -7,28 +7,30 @@ using std::istream;
 #include <ostream>
 using std::ostream;
 
-#include "plana.h"
-
 #define PI 3.14
 
-class Circulo : public Plana {
-	private:
-		float raio;
-	public:
-		Circulo(float raio);
+#include "plana.h"
 
-		Circulo();
-		~Circulo();
+namespace arielLib {
+	class Circulo : public Plana {
+		private:
+			float raio;
+		public:
+			Circulo(float raio);
 
-		void calcArea();
-		void calcPerimetro();
+			Circulo();
+			~Circulo();
 
-		void setRaio(float raio);
+			void calcArea();
+			void calcPerimetro();
 
-		float getRaio();
+			void setRaio(float raio);
 
-		friend istream& operator>> (std::istream &i, Circulo &c);
-		friend ostream& operator<< (ostream &o, Circulo const _circulo);
-};
+			float getRaio();
+
+			friend istream& operator>> (std::istream &i, Circulo &c);
+			friend ostream& operator<< (ostream &o, Circulo const _circulo);
+	};
+}
 
 #endif

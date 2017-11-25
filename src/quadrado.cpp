@@ -1,23 +1,26 @@
 #include "quadrado.h"
 
-Quadrado::Quadrado(float lado) {this->lado = lado;}
+namespace arielLib {
 
-Quadrado::Quadrado() {}
-Quadrado::~Quadrado() {}
+	Quadrado::Quadrado(float lado) {this->lado = lado;}
 
-void Quadrado::calcArea() {area = lado * lado;}
-void Quadrado::calcPerimetro() {perimetro = 4 * lado;}
+	Quadrado::Quadrado() {}
+	Quadrado::~Quadrado() {}
 
-void Quadrado::setLado(float lado) {this->lado = lado;}
+	void Quadrado::calcArea() {area = lado * lado;}
+	void Quadrado::calcPerimetro() {perimetro = 4 * lado;}
 
-float Quadrado::getLado() {return lado;}
+	void Quadrado::setLado(float lado) {this->lado = lado;}
 
-istream& operator>> (std::istream &i, Quadrado &r) {
-	i >> r.lado;
-	return i;
-}
+	float Quadrado::getLado() {return lado;}
 
-ostream& operator<< (ostream &o, Quadrado const _quadrado) {
-	o << "Area: " << _quadrado.area << std::endl << "Perimetro: " << _quadrado.perimetro << std::endl;
-	return o;
+	istream& operator>> (std::istream &i, Quadrado &r) {
+		i >> r.lado;
+		return i;
+	}
+
+	ostream& operator<< (ostream &o, Quadrado const _quadrado) {
+		o << "Area: " << _quadrado.area << std::endl << "Perimetro: " << _quadrado.perimetro << std::endl;
+		return o;
+	}
 }
