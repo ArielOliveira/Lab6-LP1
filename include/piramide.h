@@ -4,9 +4,6 @@
 #include <istream>
 using std::istream;
 
-#include <ostream>
-using std::ostream;
-
 #include "espacial.h"
 
 namespace arielLib {
@@ -33,7 +30,6 @@ namespace arielLib {
 			float getAreaLateral();
 
 			friend istream& operator>> (std::istream &i, Piramide &p);
-			friend ostream& operator<< (ostream &o, Piramide const _piramide);
 	};
 }
 

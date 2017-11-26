@@ -22,9 +22,4 @@ namespace arielLib {
 		i >> r.base >> r.altura;
 		return i;
 	}
-
-	ostream& operator<< (ostream &o, Retangulo const _retangulo) {
-		o << "Area: " << _retangulo.area << std::endl << "Perimetro: " << _retangulo.perimetro << std::endl;
-		return o;
-	}
 }

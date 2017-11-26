@@ -4,9 +4,6 @@
 #include <istream>
 using std::istream;
 
-#include <ostream>
-using std::ostream;
-
 #include "espacial.h"
 
 namespace arielLib {
@@ -33,7 +30,6 @@ namespace arielLib {
 			float getAresta3();
 
 			friend istream& operator>> (std::istream &i, Paralelepipedo &p);
-			friend ostream& operator<< (ostream &o, Paralelepipedo const _paralelepipedo);
 	};
 }
 

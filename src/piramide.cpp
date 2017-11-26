@@ -26,9 +26,4 @@ namespace arielLib {
 		i >> p.altura >> p.area_base >> p.area_lateral;
 		return i;
 	}
-
-	ostream& operator<< (ostream &o, Piramide const _piramide) {
-		o << "Area: " << _piramide.area << std::endl << "Volume: " << _piramide.volume << std::endl;
-		return o;
-	}
 }

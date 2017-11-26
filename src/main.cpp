@@ -24,7 +24,14 @@ int main() {
 	c->calcPerimetro();
 
 	cout << *c << endl;
-	
+
+	Retangulo *r = new Retangulo();
+	cin >> *r;
+
+	r->calcArea();
+	r->calcPerimetro();
+
+	cout << *r << endl;
 
 	return 0;
 }

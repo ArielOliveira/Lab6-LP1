@@ -4,9 +4,6 @@
 #include <istream>
 using std::istream;
 
-#include <ostream>
-using std::ostream;
-
 #include "plana.h"
 
 namespace arielLib {
@@ -32,7 +29,6 @@ namespace arielLib {
 			float getLado();
 
 			friend istream& operator>> (std::istream &, Triangulo &t);
-			friend ostream& operator<< (ostream &o, Triangulo const _triangulo);
 	};
 }
 

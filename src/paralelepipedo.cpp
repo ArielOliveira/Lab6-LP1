@@ -30,9 +30,4 @@ namespace arielLib {
 		i >> p.aresta1 >> p.aresta2 >> p.aresta3;
 		return i;
 	}
-
-	ostream& operator<< (ostream &o, Paralelepipedo const _paralelepipedo) {
-		o << "Area: " << _paralelepipedo.area << std::endl << "Volume: " << _paralelepipedo.volume << std::endl;
-		return o;
-	}
 }

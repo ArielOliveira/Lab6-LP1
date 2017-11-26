@@ -4,9 +4,6 @@
 #include <istream>
 using std::istream;
 
-#include <ostream>
-using std::ostream;
-
 #include "espacial.h"
 
 #define PI 3.14
@@ -29,7 +26,6 @@ namespace arielLib {
 			float getRaio();
 
 			friend istream& operator>> (std::istream &i, Esfera &f);
-			friend ostream& operator<< (ostream &o, Esfera const _esfera);
 	};
 }
 

@@ -3,6 +3,9 @@
 
 #include "figura.h"
 
+#include <ostream>
+using std::ostream;
+
 namespace arielLib {
 	class Espacial : public Figura {
 		protected:
@@ -13,6 +16,11 @@ namespace arielLib {
 		
 			virtual void calcVolume() {volume = 0;}
 			float getVolume() {return volume;}
+
+			friend ostream& operator<< (ostream &o, Espacial const _espacial) {
+				o << "Area: " << _espacial.area << std::endl << "Volume: " << _espacial.volume << std::endl;
+				return o;
+			}
 	};
 }
 

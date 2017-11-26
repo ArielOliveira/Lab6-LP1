@@ -18,10 +18,4 @@ namespace arielLib {
 		i >> c.aresta;
 		return i;
 	}
-
-	ostream& operator<< (ostream &o, Cubo const _cubo) {
-		o << "Area: " << _cubo.area << std::endl << "Volume: " << _cubo.volume << std::endl;
-		return o;
-	}
-
 }

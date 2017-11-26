@@ -18,9 +18,4 @@ namespace arielLib {
 		i >> c.raio;
 		return i;
 	}
-
-	ostream& operator<< (ostream &o, Circulo const _circulo) {
-		o << "Area: " << _circulo.area << std::endl << "Perimetro: " << _circulo.perimetro << std::endl;
-		return o;
-	}
 }

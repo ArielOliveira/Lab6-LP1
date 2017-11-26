@@ -19,7 +19,9 @@ OBJS = ./build/circulo.o ./build/cubo.o ./build/esfera.o ./build/paralelepipedo.
 
 CPPFLAGS = -Wall -pedantic -ansi -std=c++11 -I. -I$(INC_DIR)/
 
-.PHONY: clean debug dir doxy
+.PHONY: clean debug dir doxy lib
+
+lib: arielLib.a arielLib.so
 
 arielLib.a: $(CPPFILES)
 	$(CC) $(CPPFLAGS) -c $(SRC_DIR)/circulo.cpp -o $(OBJ_DIR)/circulo.o
