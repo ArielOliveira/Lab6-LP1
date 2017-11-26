@@ -4,6 +4,8 @@
 #include <istream>
 using std::istream;
 
+#include <cmath>
+
 #include "plana.h"
 
 namespace arielLib {
@@ -11,9 +13,10 @@ namespace arielLib {
 		private:
 			float base;
 			float altura;
-			float lado;	
+
+			float pitagoras(float a, float b);
 		public:
-			Triangulo(float base, float altura, float lado);
+			Triangulo(float base, float altura);
 			Triangulo();
 			~Triangulo();
 
@@ -22,11 +25,9 @@ namespace arielLib {
 
 			void setBase(float base);
 			void setAltura(float altura);
-			void setLado(float lado);
 
 			float getBase();
 			float getAltura();
-			float getLado();
 
 			friend istream& operator>> (std::istream &, Triangulo &t);
 	};

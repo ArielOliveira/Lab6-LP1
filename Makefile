@@ -19,11 +19,15 @@ OBJS = ./build/circulo.o ./build/cubo.o ./build/esfera.o ./build/paralelepipedo.
 
 CPPFLAGS = -Wall -pedantic -ansi -std=c++11 -I. -I$(INC_DIR)/
 
-.PHONY: clean debug dir doxy lib
+.PHONY: clean debug dir doxy lib progs
 
-lib: arielLib.a arielLib.so
+lib: $(LIB_DIR)/arielLib.a $(LIB_DIR)/arielLib.so
 
-arielLib.a: $(CPPFILES)
+progs: $(OBJ_DIR)/prog_estatico $(OBJ_DIR)/prog_dinamico
+
+#LINUX
+
+$(LIB_DIR)/arielLib.a: $(CPPFILES)
 	$(CC) $(CPPFLAGS) -c $(SRC_DIR)/circulo.cpp -o $(OBJ_DIR)/circulo.o
 	$(CC) $(CPPFLAGS) -c $(SRC_DIR)/cubo.cpp -o $(OBJ_DIR)/cubo.o
 	$(CC) $(CPPFLAGS) -c $(SRC_DIR)/esfera.cpp -o $(OBJ_DIR)/esfera.o
@@ -35,9 +39,9 @@ arielLib.a: $(CPPFILES)
 	$(CC) $(CPPFLAGS) -c $(SRC_DIR)/quadrado.cpp -o $(OBJ_DIR)/quadrado.o
 	$(CC) $(CPPFLAGS) -c $(SRC_DIR)/retangulo.cpp -o $(OBJ_DIR)/retangulo.o
 	$(CC) $(CPPFLAGS) -c $(SRC_DIR)/triangulo.cpp -o $(OBJ_DIR)/triangulo.o
-	$(AR) rcs $(LIB_DIR)/$@  $(OBJS)
+	$(AR) rcs $@  $(OBJS)
 
-arielLib.so: $(CPPFILES)
+$(LIB_DIR)/arielLib.so: $(CPPFILES)
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/circulo.cpp -o $(OBJ_DIR)/circulo.o
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/cubo.cpp -o $(OBJ_DIR)/cubo.o
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/esfera.cpp -o $(OBJ_DIR)/esfera.o
@@ -49,13 +53,15 @@ arielLib.so: $(CPPFILES)
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/quadrado.cpp -o $(OBJ_DIR)/quadrado.o
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/retangulo.cpp -o $(OBJ_DIR)/retangulo.o
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC_DIR)/triangulo.cpp -o $(OBJ_DIR)/triangulo.o
-	$(CC) -shared -fPIC -o $(LIB_DIR)/$@  $(OBJS)
+	$(CC) -shared -fPIC -o $@  $(OBJS)
 
-prog_estatico:
-	$(CC) $(CPPFLAGS) $(SRC_DIR)/main.cpp $(LIB_DIR)/arielLib.a -o $(OBJ_DIR)/$@
+$(OBJ_DIR)/prog_estatico:
+	$(CC) $(CPPFLAGS) $(SRC_DIR)/main.cpp $(LIB_DIR)/arielLib.a -o $@
 
-prog_dinamico:
-	$(CC) $(CPPFLAGS) $(SRC_DIR)/main.cpp $(LIB_DIR)/arielLib.so -o $(OBJ_DIR)/$@
+$(OBJ_DIR)/prog_dinamico:
+	$(CC) $(CPPFLAGS) $(SRC_DIR)/main.cpp $(LIB_DIR)/arielLib.so -o $@
+
+##################################################################################################################
 
 
 debug: CPPFLAGS += -g -O0
